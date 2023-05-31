@@ -7,4 +7,5 @@ Route::controller(ContratacionController::class)->group(function(){
     Route::post('/getById', 'findById');
     Route::post('/create', 'createContratacion');
     Route::post('/update', 'updatedContratacion');
+    Route::post('/delete', 'deleteTipoContratacion');
 });

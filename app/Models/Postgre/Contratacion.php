@@ -22,20 +22,20 @@ class Contratacion extends Model
     }
 
     public function FindById($id) {
-        return Contratacion::find($id);
+        $query = "SELECT * FROM tipos_contratacion WHERE nombre = "."'".$id."'";
+        return DB::select($query);
     }
 
     public function CreateContratacion ($request) {
-      Contratacion::create($request->all());
+        Contratacion::insert($request->all());
     }
 
-    public function UpdatedContratacion ($contr) {
-            Contratacion::where('nombre', $contr['actual'])->update(['nombre' => $contr['nuevo']]);
-            // que actualice las tablas en donde esta por ese valor
+    public function UpdatedContratacion ($request) {
+        Contratacion::where('nombre',$request['actual'])->update(['nombre' => $request['nuevo']]);
     }
 
     public function deleteContratacion ($id) {
-        Contratacion::find($id)->delete();
+        Contratacion::where('nombre',$id)->delete();
     }
        
 }

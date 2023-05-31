@@ -7,4 +7,5 @@ Route::controller(CiudadesController::class)->group(function(){
     Route::post('/getById', 'findById');
     Route::post('/create', 'createCiudad');
     Route::post('/update', 'updatedCiudad');
+    Route::post('/delete', 'deleteCiudad');
 });

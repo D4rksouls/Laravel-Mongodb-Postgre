@@ -11,7 +11,6 @@ use Synfony\Component\HttpFoundation\Response;
 class SedesController extends Controller
 {
 
-    private $trama;
     public function __construct(Sedes $objSedes, Ciudades $objCiudad){
         $this->objSedes = $objSedes;
         $this->objCiudad = $objCiudad;
