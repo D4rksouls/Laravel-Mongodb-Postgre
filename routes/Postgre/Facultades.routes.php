@@ -7,4 +7,5 @@ Route::controller(FacultadesController::class)->group(function(){
     Route::post('/getById', 'findById');
     Route::post('/create', 'createFacultad');
     Route::post('/update', 'updatedFacultad');
+    Route::post('/delete', 'deleteFacultad');
 });

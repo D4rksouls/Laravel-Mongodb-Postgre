@@ -31,7 +31,7 @@ class Facultades extends Model
     }
 
     public function CreateFacultades ($request) {
-        Facultades::create($request->all());
+        Facultades::create($request);
     }
 
     public function UpdatedFacultades ($request) {// probar si da con el codigo fuera del fillable
@@ -43,7 +43,7 @@ class Facultades extends Model
         $facultad->save();
     }
 
-    public function deleteFacultades () {
+    public function deleteFacultades ($id) {
         Facultades::find($id)->delete();
     }
 }

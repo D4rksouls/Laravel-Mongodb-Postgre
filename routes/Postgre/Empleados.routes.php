@@ -7,5 +7,5 @@ Route::controller(EmpleadosController::class)->group(function(){
     Route::post('/getById', 'findById');
     Route::post('/create', 'createEmpleado');
     Route::post('/update', 'updatedEmpleado');
-    Route::post('/delete', 'updatedEmpleado');
+    Route::post('/delete', 'deleteEmpleado');
 });

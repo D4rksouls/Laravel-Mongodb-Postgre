@@ -29,7 +29,7 @@ class Departamentos extends Model
     }
 
     public function CreateDepartamentos ($request) {
-      Departamentos::create($request->all());
+      Departamentos::create($request);
     }
 
     public function UpdatedDepartamentos ($request) {

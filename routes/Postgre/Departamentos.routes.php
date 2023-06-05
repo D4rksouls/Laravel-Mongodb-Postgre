@@ -7,4 +7,5 @@ Route::controller(DepartamentosController::class)->group(function(){
     Route::post('/getById', 'findById');
     Route::post('/create', 'createDepartamento');
     Route::post('/update', 'updatedDepartamento');
+    Route::post('/delete', 'deleteDepartamento');
 });
