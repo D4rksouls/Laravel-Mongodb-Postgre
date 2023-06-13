@@ -42,4 +42,16 @@ class Programas extends Model
     public function deleteProgramas ($id) {
         Programas::find($id)->delete();
     }
+
+    public function getPostgre($name){
+        return Programas::select(
+        'programas.codigo',
+        'programas.nombre',
+        'areas.nombre as area'
+        )
+        ->leftjoin('areas','programas.area_codigo', '=','areas.codigo')
+        ->where('programas.nombre', $name)
+        ->get()
+        ->toArray();
+    }
 }

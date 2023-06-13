@@ -56,4 +56,21 @@ class Empleados extends Model
     public function deleteEmpleados ($id) {
         Empleados::find($id)->delete();
     }
+
+    public function getPostGre($id) {
+        return Empleados::select('identificacion',
+                          'nombres',
+                          'apellidos',
+                          'email',
+                          'tipo_contratacion',
+                          'facultades.nombre as facultad',
+                          'sedes.nombre as Sede',
+                          'ciudades.nombre as Ciudad'
+                )
+                ->leftjoin('facultades','cod_facultad', '=','facultades.codigo')
+                ->leftjoin('sedes','codigo_sede', '=','sedes.codigo')
+                ->leftjoin('ciudades','lugar_nacimiento', '=','ciudades.codigo')
+                ->where('identificacion', $id)->get()->toArray();
+
+    }
 }

@@ -74,6 +74,11 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('api')
             ->prefix('tipoEmpleados')
             ->group(base_path('routes/Postgre/TipoEmpleados.routes.php'));
+
+            Route::middleware('api')
+            ->prefix('mongo')
+            ->group(base_path('routes/Mongodb/Mongodb/mongodb.routes.php'));
+           
         });
     }
 

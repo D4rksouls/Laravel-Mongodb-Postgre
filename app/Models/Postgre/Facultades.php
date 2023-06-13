@@ -46,4 +46,18 @@ class Facultades extends Model
     public function deleteFacultades ($id) {
         Facultades::find($id)->delete();
     }
+
+    public function getPostgre($title) {
+        return Facultades::select(
+        'codigo',
+        'nombre',
+        'ubicacion',
+        'nro_telefono',
+        'id_decano'
+        )
+        ->where('nombre',$title)
+        ->get()
+        ->toArray();
+
+    }
 }
